@@ -45,7 +45,7 @@
 <body>
     <?php
 
-    $url = "https://restcountries.com/v3.1/all?fields=name,flags,cca2";
+    $url = "https://restcountries.com/v3.1/all?fields=name,flags,cca";
     $daten =  file_get_contents($url);
     $laender = json_decode($daten,true);
     echo "<div class='container'>";
