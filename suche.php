@@ -42,11 +42,40 @@
             margin: 15px 0;
             border-radius: 5px;
         }
+
+        a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    }
+    .nav {
+    text-align: center;
+    margin: 20px 0;
+    }
+
+    .nav a {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+    }
+    .nav a:hover {
+    background-color: #555;
+    }
+    .nav a {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
     </style>
 
 
 </head>
 <body>
+    <div class="nav">
+    <a href="index.php">Zurück</a>
+    </div>
     <form method="GET">
         <input type="text" name="land">
         <button>Suchen</button>

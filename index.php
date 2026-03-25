@@ -37,15 +37,38 @@
     text-decoration: none;
     color: black;
     display: block;
-}
+    }
+    .nav {
+    text-align: center;
+    margin: 20px 0;
+    }
+
+    .nav a {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+    }
+    .nav a:hover {
+    background-color: #555;
+    }
+    .nav a {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
 </style>
 
 </head>
 <body>
-    <?php
+    <div class="nav">
+    <a href="suche.php">Zur Suche</a>
+    </div>
+<?php
 
-    $url = "https://restcountries.com/v3.1/all?fields=name,flags,cca";
+    $url = "https://restcountries.com/v3.1/all?fields=name,flags,cca2";
     $daten =  file_get_contents($url);
     $laender = json_decode($daten,true);
     echo "<div class='container'>";
@@ -62,7 +85,7 @@
     echo "</div>";
 
 
-    ?>
+?>
     
 </body>
 </html>
