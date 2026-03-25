@@ -25,12 +25,19 @@
     .land img{
         width: 100%;
         margin-top: 5px;
+        transition: 0.2s;
     }
 
     .land:hover{
         transform: scale(1.05);
-        transition: 0.2s;
+        
     }
+
+    a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
 
 </style>
 
@@ -38,17 +45,18 @@
 <body>
     <?php
 
-    $url = "https://restcountries.com/v3.1/all?fields=name,flags";
+    $url = "https://restcountries.com/v3.1/all?fields=name,flags,cca2";
     $daten =  file_get_contents($url);
     $laender = json_decode($daten,true);
-    //echo $laender[0]["name"]["common"];
     echo "<div class='container'>";
         foreach($laender as $land){
+            echo "<a href='landinfo.php?code=" . $land["cca2"] . "'>";
             echo "<div class='land'>";
             echo $land["name"]["common"];
             echo "<br>";
             echo "<img src='" . $land["flags"]["png"] . "'>";
             echo "</div>";
+            echo  "</a>";
         }
 
     echo "</div>";
